@@ -47,7 +47,7 @@ class ContactController extends Controller
             'name' => 'required|string|max:250',
             'email' => 'required|email',
             'message' => 'required|string',
-            'image' => 'nullable',
+            'image' => 'nullable|image',
         ]);
 
         $imageName = null;
