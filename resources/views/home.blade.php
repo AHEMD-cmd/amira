@@ -107,7 +107,7 @@
                                 <a href="#" class="image"><img src="https://i.pinimg.com/564x/e4/f9/67/e4f9676d8b701ce5750775c7d8bef985.jpg" width="260px" height="260px" style="border-radius: 50%" /></a>
                                 <div class="content">
                                     <h2 class="major">what we do </h2>
-                                    <p>Residential, Administrative, Commercial, Tourist. you can design your home, your hotel, your Resturant  and your office</p>
+                                    <p>We are Here to Design your Furniture and your space (Residential, Administrative,Commercial,Tourism)</p>
                                     {{-- <a href="#" class="special">Learn more</a> --}}
                                 </div>
                             </div>
