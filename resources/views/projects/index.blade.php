@@ -110,7 +110,7 @@
 						<!-- Four -->
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
-                                    <h2 class="major">All Projects  <a href="{{route('project.create')}}"  class="btn btn-outline-primary"> Create Project </a></h2>
+                                    <h2 class="major">All Projects <br>  <a href="{{route('project.create')}}"  class="btn btn-outline-primary"> Create Project </a></h2>
 
 									<section class="features">
                                         @foreach ($projects as $project)
