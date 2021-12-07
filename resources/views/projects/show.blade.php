@@ -88,7 +88,7 @@
 											<img src="{{'cover/'. $project->cover }}" height="500px" /><br>
                                             @foreach ($project->images as $img)
 
-                                            <img src="{{'images/'. $img->image }}"  height="600px"  width="80%" class="a" />
+                                            <img src="{{'images/'. $img->image }}"  height="500px"   />
 
                                             @endforeach
 										</article>
