@@ -97,10 +97,12 @@
 
 									</section>
 
+                                    <br>
+                              {{ $projects->links() }}
+
 								</div>
 
-                                <br>
-                              {{ $projects->links() }}
+
 							</section>
 
 					</section>
