@@ -54,7 +54,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        $site = Site::first();
+        return view('projects.create', compact('site'));
     }
 
     /**
