@@ -135,6 +135,9 @@
 
                               </div>
 
+                              {{ $projects->links() }}
+
+
 					</section>
 
 				<!-- Footer -->
