@@ -10,28 +10,20 @@ use Illuminate\Support\Facades\File;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct() {
+        $this->middleware('auth')->except(['browse_all', 'show']);
+        }
+
     public function browse_all()
     {
         $projects = Project::all();
         $site = Site::first();
 
-        // $projects = Project::take(4)->get();
         return view('browse_all', compact('projects', 'site'));
     }
 
-    public function front_project()
-    {
-        $projects = Project::all();
-        $site = Site::first();
 
-        // $projects = Project::take(4)->get();
-        return view('home', compact('projects', 'site'));
-    }
     public function index()
     {
 
