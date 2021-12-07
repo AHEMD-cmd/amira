@@ -19,7 +19,7 @@ class CreateSitesTable extends Migration
             $table->string('title1');
             $table->string('sub1');
             $table->string('about_us');
-            $table->string('sub2');
+            $table->longText('sub2');
             $table->string('image');
             $table->timestamps();
         });
