@@ -80,29 +80,22 @@
 
 
 						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Show project</h2>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="{{'cover/'. $project->cover }}" height="300px"/></a>
-										</article>
+                        <section id="four" class="wrapper alt style1" >
+                            <div class="inner">
+                                <h2 class="major">show projec</h2>
+                                <section class="features">
+                                    @foreach ($project->images as $img)
+                                    <article  >
+                                        <a href="#" class="image"><img src="{{'images/'. $img->image }}" height="300px" /></a>
+                                        <h3 class="major">as</h3>
+                                        <p>as</p>
+                                    </article>
+                                    @endforeach
 
-                                        @foreach ($project->images as $img)
-                                        <article>
-                                            <a href="#" class="image"> <img src="{{'images/'. $img->image }}"  height="300px" /></a>
-                                        </article>
-                                        @endforeach
+                                </section>
 
-                                        <br>
-									</section>
-
-
-
-								</div>
-
-
-							</section>
+                            </div>
+                        </section>
 
 					</section>
 
