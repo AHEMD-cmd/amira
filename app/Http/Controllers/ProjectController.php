@@ -30,10 +30,6 @@ class ProjectController extends Controller
     }
     public function index()
     {
-        $projects = Project::all();
-        $site = Site::first();
-        // $projects = Project::take(4)->get();
-        return view('projects.index', compact('projects', 'site'));
 
         if(auth()->user()->type == 'admin'){
 

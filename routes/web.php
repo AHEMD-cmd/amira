@@ -13,7 +13,7 @@ Route::get('/', function () {
     return view('home', compact('projects', 'site'));
 });
 
-Route::resource('project', 'ProjectController')->except(['destroy']);
+Route::resource('project', 'ProjectController')->except(['destroy'])->middleware('auth');
 Route::get('project/destroy/{id}', 'ProjectController@destroy')->name('project.destroy');
 Route::get('cover/destroy/{id}', 'ProjectController@cover_destroy')->name('cover.destroy');
 Route::get('image/destroy/{id}', 'ProjectController@image_destroy')->name('image.destroy');
@@ -25,7 +25,7 @@ Route::post('contact/store', 'ContactController@store')->name('contact.store');
 Route::get('contact/destroy/{id}', 'ContactController@destroy')->name('contact.destroy');
 
 
-Route::resource('site', 'SiteController');
+Route::resource('site', 'SiteController')->middleware('auth');
 
 Auth::routes();
 
