@@ -23,7 +23,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Admin side</a></h1>
+						<h1><a href="/">Admin side</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
