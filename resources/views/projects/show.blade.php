@@ -85,10 +85,10 @@
 									<h2 class="major">Show project</h2>
 									<section class="features">
 										<article>
-											<a href="#" class="image"><img src="{{'cover/'. $project->cover }}" height="300px" /></a>
+											<button class="image"><img src="{{'cover/'. $project->cover }}" height="500px" /></button><br>
                                             @foreach ($project->images as $img)
 
-											<a href="#" class="image"><img src="{{'images/'. $img->image }}" height="300px" /></a>
+											<button class="image"><img src="{{'images/'. $img->image }}" height="500px" /></button><br>
 
                                             @endforeach
 										</article>
@@ -105,7 +105,7 @@
 
 					</section>
 
-			
+
 
 			</div>
 
