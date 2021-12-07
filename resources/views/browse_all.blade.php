@@ -94,11 +94,11 @@
 										</article>
                                         @endforeach
 
-
+                                        <br>
+                              {{ $projects->links() }}
 									</section>
 
-                                    <br>
-                              {{ $projects->links() }}
+
 
 								</div>
 
