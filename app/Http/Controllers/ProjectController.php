@@ -17,7 +17,7 @@ class ProjectController extends Controller
 
     public function browse_all()
     {
-        $projects = Project::paginate(4);
+        $projects = Project::latest()->paginate(4);
         $site = Site::first();
 
         return view('browse_all', compact('projects', 'site'));
