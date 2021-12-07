@@ -76,8 +76,7 @@
 					<section id="wrapper" class="container">
 						<header>
 							<div class="inner">
-                                <a href="{{route('project.index')}}" style="position: relative; left:850px; top:47px" class="btn btn-outline-primary">  All projects </a>
-								<h2>edit page</h2>
+								<h2>edit page  &nbsp;&nbsp;&nbsp; <a href="{{route('project.index')}}"  class="btn btn-outline-primary">  All projects </a>                                </h2>
 							</div>
 						</header>
 
