@@ -106,20 +106,38 @@
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
+							<form method="post" action="{{route('contact.store')}}" enctype="multipart/form-data">
+                                @csrf
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
+										<input type="text" name="name" id="name" class=" @error('name') is-invalid @enderror" />
+                                        @error('name')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
 									<div class="field">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
+										<input type="email" name="email" id="email"  class=" @error('email') is-invalid @enderror" />
+                                        @error('email')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
+										<textarea name="message" id="message" rows="4" class=" @error('email') is-invalid @enderror"></textarea>
+                                        @error('message')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
+									<div class="field">
+										<label for="Image">Image</label>
+										<input type="file" name="image" id="Image" rows="4" class=" @error('image') is-invalid @enderror">
+                                        <small style="font-size: 14px; color:rgb(144, 184, 72)">image is optional</small>
+                                        @error('image')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
