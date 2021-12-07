@@ -98,6 +98,7 @@
 
 								</div>
 							</section>
+                            {{ $projects->links() }}
 
 					</section>
 
