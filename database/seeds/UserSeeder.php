@@ -16,6 +16,7 @@ class SiteSeeder extends Seeder
             'name' => 'Amira Elsayed ',
             'email' => 'amiraelsayed9090@gmail.com',
             'password' => bcrypt('asdasdas'),
+            'type' => 'admin',
             ]);
     }
 }
