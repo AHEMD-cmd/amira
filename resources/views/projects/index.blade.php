@@ -82,8 +82,8 @@
 						<!-- Four -->
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
-                                    <h2 class="major">All Projects</h2>
-                                    <a href="{{route('project.create')}}"  class="btn btn-outline-primary"> Create Project </a>
+                                    <h2 class="major">All Projects &nbsp;&nbsp;&nbsp; <a href="{{route('project.create')}}"  class="btn btn-outline-primary"> Create Project </a></h2>
+
 									<section class="features">
                                         @foreach ($projects as $project)
 										<article>
@@ -92,7 +92,7 @@
 											<p>{{$project->desc}}.</p>
 											<a href="{{route('project.show', $project->id)}}" class="special" style="display: inline">view  </a>
                                             <a href="{{route('project.edit', $project->id)}}" class="special" style="display: inline">Edit</a>
-                                            <a href="{{route('project.destroy', $project->id)}}" class="special" style="display: inline;position: relative;left:20px">Delete</a>
+                                            <a href="{{route('project.destroy', $project->id)}}" class="special" style="display: inline">Delete</a>
 										</article>
                                         @endforeach
 
