@@ -155,7 +155,7 @@ class ProjectController extends Controller
             }
         }
 
-        return redirect()->route('project.index')->with('success', 'success');
+        return redirect()->route('project.index')->with('update', 'success');
 
 
     }
@@ -175,7 +175,7 @@ class ProjectController extends Controller
         }
 
         $project->delete();
-        return back();
+        return back()->with('deleted', 'asd');
     }
 
     public function image_destroy($id)

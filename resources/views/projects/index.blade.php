@@ -31,6 +31,18 @@
         alertify.success('Created successfully');
              </script>
         @endif
+        @if (session()->has('update'))
+            <script>
+        alertify.set('notifier','position', 'bottom-right');
+        alertify.success('updated successfully');
+             </script>
+        @endif
+        @if (session()->has('deleted'))
+            <script>
+        alertify.set('notifier','position', 'bottom-right');
+        alertify.success('updated successfully');
+             </script>
+        @endif
 
 
 		<!-- Page Wrapper -->

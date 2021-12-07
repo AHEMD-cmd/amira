@@ -62,7 +62,7 @@ class ContactController extends Controller
             'message' => $request->message,
             'image' => $imageName
         ]);
-        return back()->with('success', 'asd');
+        return back()->with('con', 'asd');
     }
 
 

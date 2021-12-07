@@ -21,7 +21,7 @@
 	</head>
 	<body class="is-preload">
 
-        @if (session()->has('success'))
+        @if (session()->has('con'))
             <script>
         alertify.set('notifier','position', 'bottom-right');
         alertify.success('we will contact you in few hours');
