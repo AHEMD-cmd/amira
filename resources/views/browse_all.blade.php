@@ -90,7 +90,7 @@
 											<a href="{{route('project.show', $project->id)}}" class="image"><img src="{{'cover/'. $project->cover }}" height="300px" /></a>
 											<h3 class="major">{{$project->title}}</h3>
 											<p>{{$project->desc}}.</p>
-											<a href="#" class="special">view project</a>
+											<a href="{{route('project.show', $project->id)}}" class="special">view project</a>
 										</article>
                                         @endforeach
 
