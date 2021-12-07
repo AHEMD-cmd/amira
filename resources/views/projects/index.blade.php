@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <!--
 	Solid State by HTML5 UP
@@ -7,55 +6,26 @@
 -->
 <html>
 	<head>
-		<title>Generic - Solid State by HTML5 UP</title>
+		<title>Solid State by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <base href="/public">
 
         <link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        {{-- <script src="https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script> --}}
-        <!-- CSS -->
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-            <!-- Default theme -->
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-            <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 	</head>
 	<body class="is-preload">
-
-        @if (session()->has('success'))
-            <script>
-        alertify.set('notifier','position', 'bottom-right');
-        alertify.success('Created successfully');
-             </script>
-        @endif
-        @if (session()->has('update'))
-            <script>
-        alertify.set('notifier','position', 'bottom-right');
-        alertify.success('updated successfully');
-             </script>
-        @endif
-        @if (session()->has('deleted'))
-            <script>
-        alertify.set('notifier','position', 'bottom-right');
-        alertify.success('deleted successfully');
-             </script>
-        @endif
-
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Admin side</a></h1>
+					<header id="header" class="alt">
+						<h1><a href="index.html">Solid State</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-
 
 				<!-- Menu -->
 					<nav id="menu">
@@ -103,62 +73,79 @@
 
 
 				<!-- Wrapper -->
-					<section id="wrapper" class="container mb-5">
-						<header>
-							<div class="inner">
-                                <a href="{{route('project.create')}}" style="position: relative; left:850px; top:47px" class="btn btn-outline-primary"> Create Project </a>
-								<h2>projects</h2>
-							</div>
-						</header>
-
-						<!-- Content -->
+					<section id="wrapper">
 
 
 
-                              <div class="row row-cols-1 row-cols-md-3 g-4" class="features">
-                                  @foreach ($projects as $project)
-
-                                  <div class=" ">
 
 
-                                    <article class="">
-                                        <a href="#" class="image"><img src="{{'cover/'. $project->cover }}"  height="300px" width="414px"/></a>
-                                        <h3 class="major">{{ $project->title }}</h3>
-                                        <p>{{ $project->desc}}</p>
-                                        <a href="{{route('project.edit', $project->id)}}" class="special" style="display: inline">Edit</a>
-                                        <a href="{{route('project.destroy', $project->id)}}" class="special" style="display: inline;position: relative;left:20px">Delete</a>
-                                        <a href="{{route('project.show', $project->id)}}" class="special" style="display: inline;position: relative;left:35px">Show</a>
+						<!-- Four -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+                                    <h2 class="major">All Projects</h2>
+                                    <a href="{{route('project.create')}}" style="position: relative; left:850px; top:47px" class="btn btn-outline-primary"> Create Project </a>
+									<section class="features">
+                                        @foreach ($projects as $project)
+										<article>
+											<a href="{{route('project.show', $project->id)}}" class="image"><img src="{{'cover/'. $project->cover }}" height="300px" /></a>
+											<h3 class="major">{{$project->title}}</h3>
+											<p>{{$project->desc}}.</p>
+											<a href="{{route('project.show', $project->id)}}" class="special">view project</a>
+                                            <a href="{{route('project.edit', $project->id)}}" class="special" style="display: inline">Edit</a>
+                                            <a href="{{route('project.destroy', $project->id)}}" class="special" style="display: inline;position: relative;left:20px">Delete</a>
+										</article>
+                                        @endforeach
 
-                                    </article>
-                                  </div>
-                                  @endforeach
-
-                              </div>
-<br>
+                                        <br>
                               {{ $projects->links() }}
+									</section>
 
+
+
+								</div>
+
+
+							</section>
 
 					</section>
 
 				<!-- Footer -->
-					{{-- <section id="footer" class="container">
+					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
 							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
+							<form method="post" action="{{route('contact.store')}}" enctype="multipart/form-data">
+                                @csrf
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
+										<input type="text" name="name" id="name" class=" @error('name') is-invalid @enderror" />
+                                        @error('name')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
 									<div class="field">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
+										<input type="email" name="email" id="email"  class=" @error('email') is-invalid @enderror" />
+                                        @error('email')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
+										<textarea name="message" id="message" rows="4" class=" @error('email') is-invalid @enderror"></textarea>
+                                        @error('message')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
+									<div class="field">
+										<label for="Image">Image</label>
+										<input type="file" name="image" id="Image" rows="4" class=" @error('image') is-invalid @enderror">
+                                        <small style="font-size: 14px; color:rgb(144, 184, 72)">image is optional</small>
+                                        @error('image')
+                                        <div  class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                    </div>
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
@@ -166,21 +153,21 @@
 							</form>
 							<ul class="contact">
 								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
+									Egypt<br />
+									Al-sharqia<br />
+									Minya al-Qamh
 								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+								<li class="icon solid fa-phone">01022953646</li>
+								{{-- <li class="icon solid fa-envelope"><a href="Amiraelsayed9090@gmail.com">Amiraelsayed9090@gmail.com</a></li> --}}
+								<li class="icon brands fa-behance"><a href="https://www.behance.net/amiraelsayb861">https://www.behance.net/amiraelsayb861</a></li>
+								<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/HomeCurve">https://www.facebook.com/HomeCurve</a></li>
+								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/amira.elsayed.innovation/">https://www.instagram.com/amira.elsayed.innovation/</a></li>
 							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>&nbsp; &nbsp;&nbsp; Made by Ahmed Yasser  &nbsp; &nbsp;&nbsp;  Phone : 01011017982</li>
 							</ul>
 						</div>
-					</section> --}}
+					</section>
 
 			</div>
 
