@@ -93,12 +93,14 @@
 											<a href="#" class="special">view project</a>
 										</article>
                                         @endforeach
-                                        
-                                        {{ $projects->links() }}
+
 
 									</section>
 
 								</div>
+
+                                <br>
+                              {{ $projects->links() }}
 							</section>
 
 					</section>
