@@ -41,8 +41,7 @@
 
 								<li><a href="{{route('contact.index')}}">Contact</a></li>
 								<li><a href="{{route('project.index')}}">Projects</a></li>
-                                <li><a href="{{route('site.edit',$site->id)}}">Edit site setting</a></li> 
-
+								<li><a href="{{route('site.edit',$site->id)}}">Edit site setting</a></li>
                                 @endif
                                 @endauth
                                 @guest
