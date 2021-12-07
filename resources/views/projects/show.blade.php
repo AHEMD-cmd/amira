@@ -85,13 +85,17 @@
 									<h2 class="major">Show project</h2>
 									<section class="features">
 										<article>
-											<img src="{{'cover/'. $project->cover }}" height="500px" /><br>
-                                            @foreach ($project->images as $img)
+											<img src="{{'cover/'. $project->cover }}" height="300px" />
 
-                                            <img src="{{'images/'. $img->image }}"  height="500px"   />
 
-                                            @endforeach
+
 										</article>
+                                        @foreach ($project->images as $img)
+
+                                        <article>
+                                            <img src="{{'images/'. $img->image }}"  height="300px" />
+                                        </article>
+                                        @endforeach
 
                                         <br>
 									</section>
