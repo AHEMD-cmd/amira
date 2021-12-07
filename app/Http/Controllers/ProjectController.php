@@ -18,15 +18,19 @@ class ProjectController extends Controller
     public function browse_all()
     {
         $projects = Project::all();
+        $site = Site::first();
+
         // $projects = Project::take(4)->get();
-        return view('browse_all', compact('projects'));
+        return view('browse_all', compact('projects', 'site'));
     }
 
     public function front_project()
     {
         $projects = Project::all();
+        $site = Site::first();
+
         // $projects = Project::take(4)->get();
-        return view('home', compact('projects'));
+        return view('home', compact('projects', 'site'));
     }
     public function index()
     {

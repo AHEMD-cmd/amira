@@ -40,7 +40,7 @@
         @if (session()->has('deleted'))
             <script>
         alertify.set('notifier','position', 'bottom-right');
-        alertify.success('updated successfully');
+        alertify.success('deleted successfully');
              </script>
         @endif
 
