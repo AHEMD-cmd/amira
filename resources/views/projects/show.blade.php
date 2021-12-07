@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+{{-- <!DOCTYPE HTML>
 <!--
 	Solid State by HTML5 UP
 	html5up.net | @ajlkn
@@ -112,4 +112,4 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-</html>
+</html> --}}
