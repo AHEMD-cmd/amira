@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
 	Solid State by HTML5 UP
 	html5up.net | @ajlkn
@@ -82,11 +82,11 @@
 						<!-- Four -->
                         <section id="four" class="wrapper alt style1" >
                             <div class="inner">
-                                <h2 class="major">show projec</h2>
+                                <h2 class="major">show</h2>
                                 <section class="features">
                                     @foreach ($project->images as $img)
                                     <article  >
-                                        <a href="#" class="image"><img src="{{'images/'. $img->image }}" height="300px" /></a>
+                                        <a href="#" class="image"><img src="{{'images/'. $img->image }}" height="300px" /></a><br>
                                         <h3 class="major">as</h3>
                                         <p>as</p>
                                     </article>
@@ -112,4 +112,4 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-</html> --}}
+</html>
