@@ -87,8 +87,7 @@
                                     @foreach ($project->images as $img)
                                     <article  >
                                         <a href="#" class="image"><img src="{{'images/'. $img->image }}" height="300px" /></a><br>
-                                        {{-- <h3 class="major">as</h3>
-                                        <p>as</p> --}}
+                                        
                                     </article>
                                     @endforeach
 
