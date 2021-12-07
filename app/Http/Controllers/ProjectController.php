@@ -17,7 +17,7 @@ class ProjectController extends Controller
 
     public function browse_all()
     {
-        $projects = Project::paginate(9);
+        $projects = Project::paginate(4);
         $site = Site::first();
 
         return view('browse_all', compact('projects', 'site'));
@@ -29,7 +29,7 @@ class ProjectController extends Controller
 
         if(auth()->user()->type == 'admin'){
 
-            $projects = Project::take(4)->get();
+            $projects = Project::latest()->paginate(4);
             $site = Site::first();
 
             // $projects = Project::take(4)->get();

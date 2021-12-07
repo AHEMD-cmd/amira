@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    $projects = Project::all();
+    $projects = Project::take(4)->get();
     $site = Site::first();
 
     return view('home', compact('projects', 'site'));
