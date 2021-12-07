@@ -12,9 +12,37 @@
         <base href="/public">
 
         <link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        {{-- <script src="https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script> --}}
+        <!-- CSS -->
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+            <!-- Default theme -->
+            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+            <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+
+
+        @if (session()->has('success'))
+        <script>
+    alertify.set('notifier','position', 'bottom-right');
+    alertify.success('Created successfully');
+         </script>
+    @endif
+    @if (session()->has('update'))
+        <script>
+    alertify.set('notifier','position', 'bottom-right');
+    alertify.success('updated successfully');
+         </script>
+    @endif
+    @if (session()->has('deleted'))
+        <script>
+    alertify.set('notifier','position', 'bottom-right');
+    alertify.success('deleted successfully');
+         </script>
+    @endif
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
