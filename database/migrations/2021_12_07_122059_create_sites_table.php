@@ -20,7 +20,7 @@ class CreateSitesTable extends Migration
             $table->string('sub1');
             $table->string('about_us');
             $table->longText('sub2');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
