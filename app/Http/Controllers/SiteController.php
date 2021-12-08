@@ -39,7 +39,7 @@ class SiteController extends Controller
             'image' => 'nullable',
         ]);
 
-        $imageName = null;
+        $imageName = $site->image;
         if($request->hasFile('image')){
 
 
